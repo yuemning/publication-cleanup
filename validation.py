@@ -247,7 +247,7 @@ def get_last_name(a):
 
 
 field_type={
-        "ENTRYTYPE": ['inproceedings', 'phdthesis', 'masterthesis', 'article'],
+        "ENTRYTYPE": ['inproceedings', 'phdthesis', 'mastersthesis', 'article'],
         }
 # Check that each field satisfies the correct format
 for entry in bib_database.entries:
@@ -290,7 +290,7 @@ for entry in bib_database.entries:
         keywords = entry['keywords']
         keywords_string = keywords[0]
         for k in keywords[1:]:
-            keywords_string = keywords_string + '; ' + k
+            keywords_string = keywords_string + ', ' + k
         if not keywords_string.islower():
             print("{} keywords are not all lowercase: {}".format(ID, keywords_string))
         entry['keywords'] = keywords_string
